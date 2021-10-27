@@ -53,7 +53,7 @@ const Form = ({update , create , post=null ,reset}) => {
           </select>
           <label> Title </label>
           <input className="form-control form-control-sm" name="title" value={state.title} onChange={changehandle} onBlur={blurHandler} />
-          {titlevalid? <i className={classes.err}>Title should contain 10 characters</i>: '' }
+          {titlevalid? <i className={classes.err}>Title should contain atleast 10 characters</i>: '' }
           <label> Body </label>
           <input className="form-control form-control-sm" name="body"  value={state.body} onChange={changehandle} onBlur={blurHandler} />
           { bodyvalid? <i className={classes.err}>Body should contain atleast 20 characters</i> : ''}
