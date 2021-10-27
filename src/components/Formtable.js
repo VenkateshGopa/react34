@@ -9,6 +9,9 @@ const Formtable = () => {
   const [edit , setedit] = useState(null);
   const ctx = useContext(ContextData);
 
+  const reset = () =>{
+    setedit(null);
+  }
   async function deletedata(id) {
     try {
       await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
@@ -61,7 +64,7 @@ const Formtable = () => {
               <Redirect to='/form'/>
           </Route>
           <Route path='/form'>
-              <Form update={update} create={create} post={edit}/>
+              <Form update={update} create={create} post={edit} reset={reset}/>
           </Route>
           <Route path='/posts'>
               <Table editpost={editpost} deletedata={deletedata} />
