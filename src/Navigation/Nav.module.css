@@ -1,0 +1,52 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(131, 12, 131);
+}
+.brand{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+.brand p{
+    font-style: italic;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+    margin: 0px;
+}
+.link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;   
+    margin-right: 30px;
+}
+
+.link a{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.699);
+    margin: 10px 20px;
+}
+.link a:hover ,.link a:active ,.link a.active{
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+@media screen and (max-width:450px) {
+    .brand{
+        margin-left: 20px;
+    }
+    .brand p{
+        font-size: 15px;
+    }
+    .link{
+        margin-right: 10px;
+    }
+    .link a{
+        font-size: 12px;
+        margin: 10px ;
+    }
+}

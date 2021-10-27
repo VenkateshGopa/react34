@@ -1,0 +1,51 @@
+.form{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(253, 229, 253);
+}
+.form button{
+    background-color: rgb(95, 5, 95);
+    border-color: rgb(136, 7, 136);
+    margin-top: 10px;
+}
+.form button:hover ,.form button:active , form button:focus{
+    background-color: rgb(168, 8, 168);
+}
+.form label{
+    margin-top: 5px;
+}
+.form p{
+    font-style: italic;
+    font-size: 30px;
+    font-weight: bold;
+    color:rgb(83, 11, 83);
+    margin: 0px;
+}
+.des{
+    font-weight: 500;
+    font-size: 8px;
+    display: block;
+}
+.err{
+    font-weight: 500;
+    font-size: 8px;
+    display: block;
+    color: rgb(255, 6, 6);
+    margin-top: 3px;
+}
+.form br{
+    font-size: 0;
+}
+@media screen and (max-width:450px) {
+    .form p{
+        font-size: 20px;
+    }
+    .des{
+        font-size: 7px;
+    }
+    .err{
+        font-size: 7px;
+    }
+}
