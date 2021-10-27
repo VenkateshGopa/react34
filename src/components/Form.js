@@ -4,7 +4,7 @@ import ContextData from "../Store/context";
 import { useHistory} from "react-router";
 import classes from './form.module.css';
 
-const Form = ({update , create , post=null }) => {
+const Form = ({update , create , post=null ,reset}) => {
   const data = useContext(ContextData);
   const [state, setstate] = useState({ userId: "1", title: "", body: "" });
   const [blur, setblur] = useState({title: false, body:false});
@@ -18,7 +18,6 @@ const Form = ({update , create , post=null }) => {
   const bodyv = state.body.trim().length >= 20;
   const titlevalid = (!titlev && blur.title);
   const bodyvalid = (!bodyv && blur.body);
-
 
   const changehandle = ({ target: { name, value } }) => {
     setstate({ ...state, [name]: value });
@@ -35,15 +34,14 @@ const Form = ({update , create , post=null }) => {
     {
     if (state.id) update(state);
     else create(state);
-    setstate({ userId: "1", title: "", body: "" });
-    setblur({title: false, body:false, titlevalid:false, bodyvalid:false});
+    reset();
+    setblur({title: false, body:false});
     history.push('/post');
     }
     else
     window.alert('fill out all details correctly');
   }
-  // console.log(titlev,bodyv)
-  // console.log(titlevalid , bodyvalid)
+
   return (
     <div className={classes.form}>
         <form className={`col-8 col-sm-4 col-lg-3 mx-2 p-4 rounded bg-white`} onSubmit={submithandler}>
